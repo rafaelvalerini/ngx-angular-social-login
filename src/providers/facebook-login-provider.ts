@@ -12,7 +12,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
     super();
     this.loginProviderObj.id = clientId;
     this.loginProviderObj.name = 'facebook';
-    this.loginProviderObj.url = 'https://connect.facebook.net/en_US/sdk.js';
+    this.loginProviderObj.url = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
   }
 
   initialize(): Promise<SocialUser> {
@@ -23,7 +23,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
             autoLogAppEvents: true,
             cookie: true,
             xfbml: true,
-            version: 'v2.10'
+            version: 'v3.0'
           });
           FB.AppEvents.logPageView();
 
@@ -58,7 +58,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
             resolve(FacebookLoginProvider.drawUser(Object.assign({}, {token: accessToken}, res)));
           });
         }
-      }, { scope: 'email,public_profile' });
+      }, { scope: 'email,public_profile,ads_management,publish_pages,manage_pages,business_management' });
     });
   }
 
