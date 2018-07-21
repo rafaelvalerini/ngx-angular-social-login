@@ -32,5 +32,5 @@ Desktop.ini
 **/*.ngfactory.ts
 
 # Build files
-dist/*
-build/*
+#dist/*
+#build/*
