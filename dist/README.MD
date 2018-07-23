@@ -1,4 +1,4 @@
-Social login api for Angular 5. Includes Facebook and Google login.  
+Social login api for Angular 5+. Includes Facebook and Google login.  
 
 [AOT](https://angular.io/guide/aot-compiler) Compatible.
 
@@ -9,7 +9,7 @@ Social login api for Angular 5. Includes Facebook and Google login.
 ### Install via npm 
 
 ```sh
-npm install --save angular5-social-login
+npm install --save ngx-angular-social-login
 ```
 
 ### Import the module
@@ -24,7 +24,7 @@ import {
     AuthServiceConfig,
     GoogleLoginProvider,
     FacebookLoginProvider,
-} from "angular5-social-login";
+} from "ngx-angular-social-login";
 
 
 // Configs 
@@ -73,7 +73,7 @@ import {
     AuthService,
     FacebookLoginProvider,
     GoogleLoginProvider
-} from 'angular5-social-login';
+} from 'ngx-angular-social-login';
 
 @Component({
   selector: 'app-signin',
@@ -124,7 +124,8 @@ In `signin.component.html`,
 
 ### Facebook App Id : 
 
-You need to create your own app by going to [Facebook Developers](https://developers.facebook.com/) page.
+You need to create your own app by going to [Facebook Developers](https://developers.facebook.com/) page. 
+Facebook API v3.0
 Add `Facebook login` under products and configure `Valid OAuth redirect URIs`.
 
 ### Google Client Id : 

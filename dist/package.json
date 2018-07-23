@@ -1,10 +1,10 @@
 {
-  "name": "angular5-social-login",
+  "name": "ngx-angular-social-login",
   "version": "1.0.9",
   "description": "Agular 5 : Social Login (Facebook and Google)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sabyasachibiswal/angular5-social-login"
+    "url": "https://github.com/rafaelvalerini/ngx-angular-social-login"
   },
   "author": {
     "name": "Sabyasachi Biswal",
@@ -22,7 +22,7 @@
     "social authentication",
     "angular social authentication",
     "angular-social-login",
-    "angular5-social-login",
+    "ngx-angular-social-login",
     "social-authentication",
     "social-login",
     "google-authentication",
@@ -33,12 +33,12 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sabyasachibiswal/angular5-social-login/issues"
+    "url": "https://github.com/rafaelvalerini/ngx-angular-social-login/issues"
   },
-  "main": "angular5-social-login.umd.js",
-  "module": "angular5-social-login.js",
-  "jsnext:main": "angular5-social-login.js",
-  "typings": "angular5-social-login.d.ts",
+  "main": "ngx-angular-social-login.umd.js",
+  "module": "ngx-angular-social-login.js",
+  "jsnext:main": "ngx-angular-social-login.js",
+  "typings": "ngx-angular-social-login.d.ts",
   "peerDependencies": {
     "@angular/common": "^5.0.0",
     "@angular/core": "^5.0.0",
