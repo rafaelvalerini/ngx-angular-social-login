@@ -12,7 +12,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
     super();
     this.loginProviderObj.id = clientId;
     this.loginProviderObj.name = 'facebook';
-    this.loginProviderObj.url = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
+    this.loginProviderObj.url = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.1';
   }
 
   initialize(): Promise<SocialUser> {
@@ -54,7 +54,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
       FB.login((response: any) => {
         if (response.authResponse) {
           const accessToken = FB.getAuthResponse()['accessToken'];
-          FB.api('/me?fields=name,email,picture', (res: any) => {
+          FB.api('/me?fields=name,email,picture,ads_management,publish_pages,manage_pages,business_management', (res: any) => {
             resolve(FacebookLoginProvider.drawUser(Object.assign({}, {token: accessToken}, res)));
           });
         }
