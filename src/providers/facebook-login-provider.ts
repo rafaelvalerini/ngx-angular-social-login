@@ -58,7 +58,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
             resolve(FacebookLoginProvider.drawUser(Object.assign({}, {token: accessToken}, res)));
           });
         }
-      }, { scope: 'email,public_profile' });
+      }, { scope: 'email,public_profile,publish_pages,manage_pages' });
     });
   }
 
