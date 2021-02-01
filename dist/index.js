@@ -1,6 +1,6 @@
 import { Injectable, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BehaviorSubject as BehaviorSubject$1 } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 var AuthServiceConfig = (function () {
     /**
@@ -22,7 +22,7 @@ var AuthService = (function () {
     function AuthService(config) {
         var _this = this;
         this._user = null;
-        this._authState = new BehaviorSubject$1(null);
+        this._authState = new BehaviorSubject(null);
         this.providers = config.providers;
         this.providers.forEach(function (provider, key) {
             provider.initialize().then(function (user) {
@@ -292,7 +292,7 @@ var FacebookLoginProvider = (function (_super) {
         _this.loginProviderObj = new LoginProviderClass();
         _this.loginProviderObj.id = clientId;
         _this.loginProviderObj.name = 'facebook';
-        _this.loginProviderObj.url = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0';
+        _this.loginProviderObj.url = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.1';
         return _this;
     }
     /**
@@ -342,11 +342,11 @@ var FacebookLoginProvider = (function (_super) {
             FB.login(function (response) {
                 if (response.authResponse) {
                     var /** @type {?} */ accessToken_2 = FB.getAuthResponse()['accessToken'];
-                    FB.api('/me?fields=name,email,picture', function (res) {
+                    FB.api('/me?fields=name,email,picture,ads_management,business_management', function (res) {
                         resolve(FacebookLoginProvider.drawUser(Object.assign({}, { token: accessToken_2 }, res)));
                     });
                 }
-            }, { scope: 'email,public_profile,ads_management,publish_pages,manage_pages,business_management' });
+            }, { scope: 'email,public_profile,publish_pages,manage_pages' });
         });
     };
     /**
