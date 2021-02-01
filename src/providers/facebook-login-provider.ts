@@ -23,7 +23,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
             autoLogAppEvents: true,
             cookie: true,
             xfbml: true,
-            version: 'v9.0'
+            version: 'v3.0'
           });
           FB.AppEvents.logPageView();
 
@@ -54,7 +54,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
       FB.login((response: any) => {
         if (response.authResponse) {
           const accessToken = FB.getAuthResponse()['accessToken'];
-          FB.api('/me?fields=name,email,picture,ads_management,publish_pages,manage_pages,business_management', (res: any) => {
+          FB.api('/me?fields=name,email,picture,ads_management,business_management', (res: any) => {
             resolve(FacebookLoginProvider.drawUser(Object.assign({}, {token: accessToken}, res)));
           });
         }
